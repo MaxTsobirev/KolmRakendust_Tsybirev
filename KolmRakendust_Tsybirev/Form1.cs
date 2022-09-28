@@ -13,9 +13,10 @@ namespace KolmRakendust_Tsybirev
             Title = "Select a Picture",
         };
         ColorDialog colorDialog = new ColorDialog{};
+        CheckBox box;
+
         public Form1()
         {
-            this.Size = new Size(800, 600);
             table = new TableLayoutPanel
             {
 
@@ -28,6 +29,10 @@ namespace KolmRakendust_Tsybirev
                 Dock = DockStyle.Fill,
                 BorderStyle = BorderStyle.Fixed3D
             };
+
+            box = new CheckBox { Text = "Stretch" };
+            box.CheckedChanged += CheckBox_CheckedChanged;
+
             FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
 
@@ -51,6 +56,14 @@ namespace KolmRakendust_Tsybirev
             table.SetCellPosition(flowLayoutPanel, new TableLayoutPanelCellPosition(1, 1));
             this.Controls.Add(table);
             
+        }
+
+        private void CheckBox_CheckedChanged(object? sender, EventArgs e)
+        {
+            if (box.Checked)
+                pict.SizeMode = PictureBoxSizeMode.StretchImage;
+            else
+                pict.SizeMode = PictureBoxSizeMode.Normal;
         }
 
         private void Button4_Click(object? sender, EventArgs e)
