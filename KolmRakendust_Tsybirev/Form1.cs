@@ -13,7 +13,7 @@ namespace KolmRakendust_Tsybirev
             Title = "Select a Picture",
         };
         ColorDialog colorDialog = new ColorDialog{};
-        CheckBox box;
+        //CheckBox box;
 
         public Form1()
         {
@@ -30,8 +30,8 @@ namespace KolmRakendust_Tsybirev
                 BorderStyle = BorderStyle.Fixed3D
             };
 
-            box = new CheckBox { Text = "Stretch" };
-            box.CheckedChanged += CheckBox_CheckedChanged;
+            //box = new CheckBox { Text = "Stretch" };
+            //box.CheckedChanged += CheckBox_CheckedChanged;
 
             FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
@@ -53,25 +53,23 @@ namespace KolmRakendust_Tsybirev
 
             table.Controls.Add(pict);
             table.Controls.Add(flowLayoutPanel);
-            table.SetCellPosition(flowLayoutPanel, new TableLayoutPanelCellPosition(1, 1));
+            table.SetCellPosition(flowLayoutPanel, new TableLayoutPanelCellPosition(0, 0));
+            table.SetColumnSpan(pict, 2);
             this.Controls.Add(table);
             
         }
 
         private void CheckBox_CheckedChanged(object? sender, EventArgs e)
         {
-            if (box.Checked)
-                pict.SizeMode = PictureBoxSizeMode.StretchImage;
-            else
-                pict.SizeMode = PictureBoxSizeMode.Normal;
+            //if (box.Checked)
+                //pict.SizeMode = PictureBoxSizeMode.StretchImage;
+            //else
+//pict.SizeMode = PictureBoxSizeMode.Normal;
         }
 
         private void Button4_Click(object? sender, EventArgs e)
         {
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                pict.Load(openFile.FileName);
-            }
+            this.Close();
         }
 
         private void Button3_Click(object? sender, EventArgs e)
