@@ -64,7 +64,7 @@ namespace KolmRakendust_Tsybirev
             //if (box.Checked)
                 //pict.SizeMode = PictureBoxSizeMode.StretchImage;
             //else
-//pict.SizeMode = PictureBoxSizeMode.Normal;
+            //pict.SizeMode = PictureBoxSizeMode.Normal;
         }
 
         private void Button4_Click(object? sender, EventArgs e)
