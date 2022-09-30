@@ -13,11 +13,12 @@ namespace KolmRakendust_Tsybirev
     public partial class Form2 : Form
     {
         TableLayoutPanel table;
-        TextBox text;
+        string text;
         Label label;
         Label label2;
         Label l;
         Button start;
+        string[] tehed = new string[4] { "+", "-", "*", "/" };
         public Form2()
         {
             table = new TableLayoutPanel
@@ -38,7 +39,7 @@ namespace KolmRakendust_Tsybirev
             Label label2 = new Label { BorderStyle = BorderStyle.FixedSingle, AutoSize = false, };
             label2.Location = new Point(80, 12);
 
-            l_nimed = new string[5, 4];
+            var l_nimed = new string[5, 4];
             for (int i = 0; i < 4; i++)
             {
                 table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -50,8 +51,8 @@ namespace KolmRakendust_Tsybirev
                     if (j == 1) { text = tehed[i]; }
                     else if (j == 3) { text = "="; }
                     else if (j == 4) { text = "vastus"; }
-                    else { text = l_nimi; }
-                    label l = new Label { Text = text };
+                    else { text = "?"; }
+                    Label l = new Label { Text = text };
                     table.Controls.Add(l, j, i);
                 }
             }
