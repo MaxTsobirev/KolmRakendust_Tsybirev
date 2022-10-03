@@ -5,6 +5,7 @@ namespace KolmRakendust_Tsybirev
 {
     public partial class Form1 : Form
     {
+        
         TableLayoutPanel table;
         PictureBox pict;
         OpenFileDialog openFile = new OpenFileDialog
@@ -17,6 +18,7 @@ namespace KolmRakendust_Tsybirev
 
         public Form1()
         {
+            this.Text = "Photo";
             table = new TableLayoutPanel
             {
 
