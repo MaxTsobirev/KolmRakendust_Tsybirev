@@ -23,7 +23,7 @@ namespace KolmRakendust_Tsybirev
             {
 
                 Dock = DockStyle.Fill,
-                ColumnStyles = { new ColumnStyle(SizeType.Percent, 15), new ColumnStyle(SizeType.Percent, 85) },
+                ColumnStyles = { new ColumnStyle(SizeType.Percent, 75), new ColumnStyle(SizeType.Percent, 85) },
                 RowStyles = { new RowStyle(SizeType.Percent, 90), new RowStyle(SizeType.Percent, 10) }
 
             };

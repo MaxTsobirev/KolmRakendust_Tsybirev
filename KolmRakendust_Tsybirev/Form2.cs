@@ -39,7 +39,7 @@ namespace KolmRakendust_Tsybirev
                 ColumnStyles = { new ColumnStyle(SizeType.Percent, 85), new ColumnStyle(SizeType.Percent, 15) },
                 RowStyles = { new RowStyle(SizeType.Percent, 90), new RowStyle(SizeType.Percent, 10) },
                 BorderStyle = BorderStyle.Fixed3D,
-                AutoSize = false,
+                AutoSize = false,   
                 
 
             };
@@ -139,6 +139,22 @@ namespace KolmRakendust_Tsybirev
                     }
                 }
             }
+            TimerStart();
+
+        }
+
+        private async void TimerStart()
+        {
+            int time = 30;
+            while (time != 0)
+            {
+                l.Text = time.ToString() + " seconds";
+                time -= 1;
+                await Task.Delay(1000);
+            }
+            l.Text = "";
+            this.Enabled = false;
+
         }
 
 
