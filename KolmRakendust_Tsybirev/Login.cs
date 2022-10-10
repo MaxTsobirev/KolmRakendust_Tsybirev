@@ -21,6 +21,7 @@ namespace KolmRakendust_Tsybirev
             this.Name = "Login";
             this.Size = new Size(500, 400);
             this.BackColor = Color.Gray;
+            //asd
 
             Label label = new Label { Location = new Point(200, 30), Height = 50, Width = 170, Text = "Login vorm", };
 
