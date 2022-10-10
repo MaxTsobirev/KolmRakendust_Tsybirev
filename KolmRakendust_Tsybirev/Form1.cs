@@ -18,7 +18,7 @@ namespace KolmRakendust_Tsybirev
 
         public Form1()
         {
-            this.Text = "Photo";
+            this.Text = "Pilt";
             table = new TableLayoutPanel
             {
 
@@ -38,10 +38,10 @@ namespace KolmRakendust_Tsybirev
             FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
 
-            Button button1 = new Button{Text = "Close",AutoSize = true,};
-            Button button2 = new Button{Text = "Set BG",AutoSize = true};
-            Button button3 = new Button{Text = "Clear the picture",AutoSize = true};
-            Button button4 = new Button{Text = "Show a picture",AutoSize = true};
+            Button button1 = new Button{Text = "Kinni",AutoSize = true,};
+            Button button2 = new Button{Text = "Tausta määrama", AutoSize = true};
+            Button button3 = new Button{Text = "Tühjenda pilt", AutoSize = true};
+            Button button4 = new Button{Text = "Näita pilti", AutoSize = true};
 
             flowLayoutPanel.Controls.Add(button1);
             flowLayoutPanel.Controls.Add(button2);

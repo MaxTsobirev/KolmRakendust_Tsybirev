@@ -12,7 +12,7 @@ namespace KolmRakendust_Tsybirev
 {
     public partial class Form2 : Form
     {
-        
+
         TableLayoutPanel table;
         string text;
         Label label;
@@ -24,36 +24,27 @@ namespace KolmRakendust_Tsybirev
         string[] tehed = new string[4] { "+", "-", "*", "/" };
         public Form2()
         {
-            Text = "Math Quiz";
+            Text = "Viktoriin";
             Size = new Size(500, 400);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             table = new TableLayoutPanel
             {
-                Dock = DockStyle.Fill
-            };
-            table = new TableLayoutPanel
-            {
-
                 Dock = DockStyle.Fill,
-                ColumnStyles = { new ColumnStyle(SizeType.Percent, 85), new ColumnStyle(SizeType.Percent, 15) },
-                RowStyles = { new RowStyle(SizeType.Percent, 90), new RowStyle(SizeType.Percent, 10) },
-                BorderStyle = BorderStyle.Fixed3D,
-                AutoSize = false,   
-                
-
+                ColumnStyles = { new ColumnStyle(SizeType.Percent, 25), new ColumnStyle(SizeType.Percent, 25), new ColumnStyle(SizeType.Percent, 25), new ColumnStyle(SizeType.Percent, 25) },
+                RowStyles = { new RowStyle(SizeType.Percent, 25), new RowStyle(SizeType.Percent, 25), new RowStyle(SizeType.Percent, 25), new RowStyle(SizeType.Percent, 25) },
             };
 
-            Button button = new Button { Text = "Math Quiz", Location = new Point(200, 50), BackColor = Color.Blue };
-            Label label = new Label { Text = "Time Left", AutoSize = true, };
+            Button button = new Button { Text = "viktoriin", Location = new Point(200, 50), BackColor = Color.Blue };
+            Label label = new Label { Text = "Aega jäänud", AutoSize = true, };
             label.Location = new Point(15, 15);
             Label label2 = new Label { BorderStyle = BorderStyle.FixedSingle, AutoSize = false, };
-            label2.Location = new Point(80, 12);
-            Button start = new Button { Text = "Start", Location = new Point(200, 12), };
+            label2.Location = new Point(90, 12);
+            Button start = new Button { Text = "Alusta", Location = new Point(200, 12), };
             start.Click += Start_Click;
-            
 
-            string[] names = { "rowNum", "rowSign", "rowNums", "rowEquals", "RowResult" };
+
+            string[] names = { "num", "sign", "num2", "rovno", "res" };
             string[] text = { "?", "+", "-", "*", "/", "=" };
             for (int j = 1; j < 5; j++)
             {
@@ -72,8 +63,8 @@ namespace KolmRakendust_Tsybirev
                     else
                     {
                         var lblText = text[0];
-                        if (names[i - 1] == "rowSign") lblText = text[j];
-                        else if (names[i - 1] == "rowEquals") lblText = text.Last();
+                        if (names[i - 1] == "sign") lblText = text[j];
+                        else if (names[i - 1] == "rovno") lblText = text.Last();
                         l = new Label
                         {
                             Text = lblText,
@@ -87,7 +78,7 @@ namespace KolmRakendust_Tsybirev
                     }
                 }
             }
-            
+
 
             this.Controls.Add(start);
             this.Controls.Add(label);
@@ -139,8 +130,8 @@ namespace KolmRakendust_Tsybirev
                     }
                 }
             }
-            TimerStart();
 
+            TimerStart();
         }
 
         private async void TimerStart()

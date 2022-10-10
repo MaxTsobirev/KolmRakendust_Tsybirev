@@ -16,6 +16,8 @@ namespace KolmRakendust_Tsybirev
         Label label;
         Button photobtn;
         Button math;
+        Button game;
+        Button log;
         public StartForm()
         {
             this.Text = "Menu";
@@ -30,23 +32,40 @@ namespace KolmRakendust_Tsybirev
             };
             photobtn = new Button()
             {
-                Text = "Photo",
+                Text = "Pilt",
                 Location= new Point(100,50),
                 BackColor = Color.White,
             };
             math = new Button()
             {
-                Text = "Math Quiz",
+                Text = "viktoriin",
                 Location = new Point(200, 50),
                 BackColor = Color.White,
             };
+            game = new Button()
+            {
+                Text = "Mäng",
+                Location = new Point(300,50),
+                BackColor= Color.White,
+            };
+
 
             photobtn.Click += Photobtn_Click;
             math.Click += Math_Click;
+            game.Click += Game_Click;
 
+            this.Controls.Add(game);
             this.Controls.Add(math);
             this.Controls.Add(photobtn);
             this.Controls.Add(label);
+        }
+
+
+
+        private void Game_Click(object? sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
 
         private void Math_Click(object? sender, EventArgs e)
