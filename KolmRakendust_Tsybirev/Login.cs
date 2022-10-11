@@ -29,7 +29,9 @@ namespace KolmRakendust_Tsybirev
 
             Label pass = new Label { Location = new Point(50, 170), Height = 50, Width = 150, Text = "Password:" };
 
-            Button loginbutton = new Button { Text = "Login", Location = new Point(200, 250), Width = 150, Height = 35, };
+            Button loginbutton = new Button { Text = "Login", Location = new Point(250, 250), Width = 150, Height = 35, };
+
+            Button regbutton = new Button { Text = "Register", Location = new Point(80, 250), Width = 150, Height = 35, };
 
             this.Controls.Add(label);
             this.Controls.Add(login);
@@ -37,14 +39,24 @@ namespace KolmRakendust_Tsybirev
             this.Controls.Add(login2);
             this.Controls.Add(password);
             this.Controls.Add(loginbutton);
+            this.Controls.Add(regbutton);
 
             loginbutton.Click += Loginbutton_Click;
+            regbutton.Click += Regbutton_Click;
+        }
+
+        private void Regbutton_Click(object? sender, EventArgs e)
+        {
+            Reg reg = new Reg();
+            reg.ShowDialog();
         }
 
         private void Loginbutton_Click(object? sender, EventArgs e)
         {
             StartForm start = new StartForm();
             start.ShowDialog();
+        
         }
+
     }
 }
